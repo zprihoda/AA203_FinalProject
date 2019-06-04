@@ -8,7 +8,7 @@ global w_E; w_E = 7.2921159e-5; % rad/s
 global g1; g1 = 1;
 global g2; g2 = 1;
 global g3; g3 = 1;
-global u_max; u_max = 1;
+global u_max; u_max = 1000;
 global r_min; r_min = r_E+400e3;
 
 global tbcoef; tbcoef = 1;
@@ -23,7 +23,7 @@ N = 10; % number of discretization points
 r0 = [r_E+408e3;0;0];     % orbit at iss altitude
 v0 = [0;sqrt(mu/r0(1));0];  % circular polar orbit
 x0 = [r0;v0];
-r_des0 = [0;6712e3;1000e3];
+r_des0 = [0;6712e3;2000e3];
 
 % stanford coordinates
 % des_gc = deg2rad([37,-122]);
