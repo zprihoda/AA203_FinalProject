@@ -1,6 +1,4 @@
-function [xEC,yEC,zEC] = CRF2TRF(xE,yE,zE)
-    global T w_E;
-    GMST = w_E*T/pi*180;
+function [xEC,yEC,zEC] = CRF2TRF(GMST,xE,yE,zE)
     Rot = rotz(-GMST);
     xEC = zeros(length(xE),1);
     yEC = zeros(length(yE),1);

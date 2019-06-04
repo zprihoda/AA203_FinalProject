@@ -17,18 +17,19 @@ function plotResult(var,var_init)
     
     figure()
     hold on;
-    plot3(r1(:),r2(:),r3(:),'k','LineWidth',2);
-    plot3(r1_init(:),r2_init(:),r3_init(:),'r','LineWidth',2);
+    plot3(r1(:),r2(:),r3(:),'r','LineWidth',2);
+%     plot3(r1_init(:),r2_init(:),r3_init(:),'r-.','LineWidth',2);
     plot3(r_des(1), r_des(2), r_des(3), 'r*','LineWidth',2)
     rE = 6378.1e3; 
-    [X,Y,Z] = ellipsoid(0,0,0,rE,rE,rE,20);
-    surface(X,Y,Z)
+%     [X,Y,Z] = ellipsoid(0,0,0,rE,rE,rE,20);
+%     surface(X,Y,Z,'FaceColor',[0.4,0.615,0.980])
+    earth_sphere(gca,'m')
     xlabel('x')
     ylabel('y')
     zlabel('z')
-    view(3)
+    reorientCamera(var)
     title('Orbit Trajectory','FontSize',35)
-    legend('Optimal Solution','Initial Guess','location','northeast')
+    legend('Optimal Solution','location','northeast')
     
     figure()
     hold on;
