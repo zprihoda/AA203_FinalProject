@@ -1,11 +1,15 @@
 function plotResult(var,var_init)
-    global N T r_des
+    global N r_des0 w_E
+    
     
     % plot obtained traj
-    dt = 1.0*T/(1.0*N);
     r1 = var(1:N); r2 = var(N+1:2*N); r3 = var(2*N+1:3*N); 
     u1 = var(6*N+1:7*N); u2 = var(7*N+1:8*N); u3 = var(8*N+1:9*N);
+    T = var(end);
+
+    r_des = R3(-w_E*T);
     
+    dt = 1.0*T/(1.0*N);
     t_arr = 0:dt:T-dt;
     
     % plot initial guess

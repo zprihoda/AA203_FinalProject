@@ -1,5 +1,8 @@
-function var = guessTraj(r0,r_des)
-    global N mu;
+function var = guessTraj(r0,r_des0,T)
+    global N mu w_E;
+    
+    r_des = R3(-w_E*T)*r_des0;
+    
     dist_av = (norm(r0)+norm(r_des))/2;
     theta_diff = acos(dot(r0,r_des)/(norm(r0)*norm(r_des)));
     theta_arr = linspace(0,theta_diff,N);
